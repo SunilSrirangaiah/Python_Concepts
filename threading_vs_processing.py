@@ -42,9 +42,32 @@ def cpu_bound(n):
 if __name__=="__main__":
 	
     start = time.time() 
+    
+    # io_bound(SLEEP)
+    # io_bound(SLEEP)
+    
+    # Code snippet for Part 2
+    # t1 = Thread(target = io_bound, args =(SLEEP, ))
+    # t2 = Thread(target = io_bound, args =(SLEEP, ))
+    # t1.start()
+    # t2.start()
+    # t1.join()
+    # t2.join()
+    
+    # Code snippet for Part 3
+    # cpu_bound(COUNT)
+    # cpu_bound(COUNT)
 
-    p1 = Process(target = io_bound, args =(SLEEP, ))
-    p2 = Process(target = io_bound, args =(SLEEP, ))
+    # Code snippet for Part 4
+    # t1 = Thread(target = cpu_bound, args =(COUNT, ))
+    # t2 = Thread(target = cpu_bound, args =(COUNT, ))
+    # t1.start()
+    # t2.start()
+    # t1.join()
+    # t2.join()
+
+    p1 = Process(target = cpu_bound, args =(COUNT, ))
+    p2 = Process(target = cpu_bound, args =(COUNT, ))
     p1.start()
     p2.start()
     p1.join()
